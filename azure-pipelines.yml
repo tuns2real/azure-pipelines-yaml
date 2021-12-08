@@ -12,6 +12,11 @@ pool:
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
+- task: APIContractSecurityAudit@2
+  inputs:
+    apiToken: '$(42C_API_TOKEN)'
+    minScore: '80'
+    logLevel: 'FATAL, ERROR, WARN, INFO, DEBUG)'
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
